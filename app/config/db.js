@@ -4,8 +4,7 @@ const config = require("config");
 const db = config.get("redisConfig");
 
 const client = redis.createClient({
-  host: db.host,
-  port: db.port,
+  url: db.url,
 });
 
 const connectDB = async () => {
