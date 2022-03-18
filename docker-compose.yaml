@@ -4,6 +4,8 @@ services:
     image: manhtientran/url-shortener
     ports:
       - 5000:5000
+    environment:
+      - HOST_NAME: https://cyberapis.xyz/
   redis-app:
     image: redis
     ports:
