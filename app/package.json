@@ -10,7 +10,6 @@
   "author": "Manh Tran",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.7.2",
     "config": "^3.3.7",
     "express": "^4.17.3",
     "redis": "^4.0.4",

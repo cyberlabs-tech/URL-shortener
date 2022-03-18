@@ -10,7 +10,7 @@ const config = require("config");
 // @desc        Create short URL
 router.post("/shorten", async (req, res) => {
   const { longUrl } = req.body;
-  const baseUrl = `${process.env.HOST_NAME}:${config.get("hostPort")}`;
+  const baseUrl = `${process.env.HOST_NAME}:${process.env.PORT}`;
 
   // Check base url
   if (!validUrl.isUri(baseUrl)) {
@@ -46,6 +46,7 @@ router.post("/shorten", async (req, res) => {
       const { client } = require("../config/db");
       const urlCode = await client.get(longUrl);
       if (urlCode !== null) {
+        res.set("content-type", "text/plain");
         res.json(`${baseUrl}/${urlCode}`);
       } else {
         // Insert this new long url to the database
@@ -53,6 +54,7 @@ router.post("/shorten", async (req, res) => {
         await client.set(longUrl, newUrlCode);
         await client.set(newUrlCode, longUrl);
 
+        res.set("content-type", "text/plain");
         res.json(`${baseUrl}/${newUrlCode}`);
       }
     } catch (err) {
