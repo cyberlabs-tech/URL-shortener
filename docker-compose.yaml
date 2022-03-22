@@ -1,12 +1,40 @@
 version: "3"
 services:
-  my-app:
-    image: manhtientran/url-shortener:1.2
+  my-app0:
+    image: manhtientran/url-shortener:1.4
     ports:
       - 5000:5000
     environment:
       - HOST_NAME=http://cyberapis.xyz
-      - PORT=5000
+      - PORT_LISTEN=5000
+
+
+  my-app1:
+    image: manhtientran/url-shortener:1.4
+    ports:
+      - 5001:5001
+    environment:
+      - HOST_NAME=http://cyberapis.xyz
+      - PORT_LISTEN=5001
+
+
+  my-app2:
+    image: manhtientran/url-shortener:1.4
+    ports:
+      - 5002:5002
+    environment:
+      - HOST_NAME=http://cyberapis.xyz
+      - PORT_LISTEN=5002
+
+
+  my-app3:
+    image: manhtientran/url-shortener:1.4
+    ports:
+      - 5003:5003
+    environment:
+      - HOST_NAME=http://cyberapis.xyz
+      - PORT_LISTEN=5003
+
   redis-app:
     image: redis
     ports:
