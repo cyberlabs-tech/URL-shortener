@@ -10,7 +10,7 @@ const config = require("config");
 // @desc        Create short URL
 router.post("/shorten", async (req, res) => {
   const { longUrl } = req.body;
-  const baseUrl = `${process.env.HOST_NAME}:${process.env.PORT_LISTEN}`;
+  const baseUrl = `${process.env.PROTOCOL}://${process.env.HOST_NAME}`;
 
   // Check base url
   if (!validUrl.isUri(baseUrl)) {

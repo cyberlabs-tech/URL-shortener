@@ -8,7 +8,6 @@ services:
       - HOST_NAME=http://cyberapis.xyz
       - PORT_LISTEN=5000
 
-
   my-app1:
     image: manhtientran/url-shortener:1.4
     ports:
@@ -17,7 +16,6 @@ services:
       - HOST_NAME=http://cyberapis.xyz
       - PORT_LISTEN=5001
 
-
   my-app2:
     image: manhtientran/url-shortener:1.4
     ports:
@@ -25,7 +23,6 @@ services:
     environment:
       - HOST_NAME=http://cyberapis.xyz
       - PORT_LISTEN=5002
-
 
   my-app3:
     image: manhtientran/url-shortener:1.4
